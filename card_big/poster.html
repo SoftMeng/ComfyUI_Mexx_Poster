@@ -1,0 +1,47 @@
+<div id="card" class="card">
+    <!-- 角色图片 见CSS部分 -->
+    <div class="card-image" style="background-image: url('{os_path_join_file}')">
+    </div>
+
+    <div class="frame-top"></div>
+    <div class="frame-right"></div>
+
+    <div class="blur-background"></div>
+    <div class="card-header">
+        <!-- 部落 开始 -->
+        <div class="clan">{clan}</div>
+        <!-- 部落 结束 -->
+
+        <!-- 调节血量 开始 -->
+        <div class="blood"></div>
+        <div class="blood"></div>
+        <div class="blood"></div>
+        <!-- 调节血量 结束 -->
+    </div>
+
+    <!-- 角色描述 开始 -->
+    <div class="profile-section">
+        <div class="nickname">
+            <b>{nickname}</b>
+        </div>
+        <div class="name">
+            {name}
+        </div>
+    </div>
+    <!-- 角色描述 结束 -->
+
+    <!-- 技能描述 开始 -->
+    <div class="skill-section">
+        <div class="skill-block">
+            <div class="skill-title-content">
+                <b>{title1}</b>
+            </div>
+            <div class="skill-description-content">
+                <skill-description>
+                    {description1}
+                </skill-description>
+            </div>
+        </div>
+    </div>
+    <!-- 技能描述 结束 -->
+</div>
