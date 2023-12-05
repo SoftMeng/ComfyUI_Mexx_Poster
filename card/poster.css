@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'gaoduanhei';
-    src: url('file://{mexx_path}/asset/font/gaoduanhei.ttf');
+    src: url('{current_directory}/asset/font/gaoduanhei.ttf');
 }
 @font-face {
     font-family: 'NotoSansHans-DemiLight';
-    src: url('file://{mexx_path}/asset/font/NotoSansHans-DemiLight.otf');
+    src: url('{current_directory}/asset/font/NotoSansHans-DemiLight.otf');
 }
 @font-face {
     font-family: 'xintangren';
-    src: url('file://{mexx_path}/asset/font/xintangren.ttf');
+    src: url('{current_directory}/asset/font/xintangren.ttf');
 }
 skill-description {
     font-size: 0.8em;
@@ -89,7 +89,7 @@ skill-description {
     width: 30px;
     height: 30px;
     background-size: auto 100%;
-    background-image: url("file://{mexx_path}/asset/blood.png");
+    background-image: url("{current_directory}/asset/blood.png");
     background-repeat: no-repeat;
     background-position: center;
 }

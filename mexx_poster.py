@@ -77,10 +77,10 @@ class ComfyUI_Mexx_Poster:
         os_path_join_file = os.path.join(full_output_folder, file)
         pil_images[0].save(os_path_join_file, pnginfo=metadata, compress_level=compress_level,
                            save_all=True, duration=int(1000.0 / fps), append_images=pil_images[1:])
-        print(f'file:{file}')
+        print(f'[Mexx]生成图片地址:{file}')
         hti = Html2Image()
         current_directory = os.path.dirname(os.path.realpath(__file__))
-        print(f'current_directory:{current_directory}')
+        print(f'[Mexx]当前插件地址:{current_directory}')
 
         css_file = open(f"{current_directory}/{style}/poster.css", encoding='UTF-8')
         css_template = css_file.read()
@@ -90,7 +90,7 @@ class ComfyUI_Mexx_Poster:
         color2 = random.choice(colors)
         color3 = random.choice(colors)
         color4 = random.choice(colors)
-        css = css_template.replace("{mexx_path}", current_directory)
+        css = css_template.replace("{current_directory}", current_directory)
         css = css.replace("{color1}", color1)
         css = css.replace("{color2}", color2)
         css = css.replace("{color3}", color3)
@@ -109,19 +109,19 @@ class ComfyUI_Mexx_Poster:
         descriptions = ['員工技，作為一名優秀的員工，当老闆給妳灌了一口雞湯，妳的血量-1。',
                         '主公技，作為一名優秀的老闆，当給員工灌了一口雞湯时，妳的金钱+2。']
         description1 = random.choice(descriptions)
-        print(f'需要载入图片地址:{os_path_join_file}')
-        html = html_template.format(os_path_join_file=os_path_join_file,
-                                    clan=clan,
-                                    nickname=nickname,
-                                    name=name,
-                                    title1=title1,
-                                    description1=description1
-                                    )
+        print(f'[Mexx]需要载入图片地址:{os_path_join_file}')
+
+        html = html_template.replace("{os_path_join_file}", os_path_join_file)
+        html = html.replace("{clan}", clan)
+        html = html.replace("{nickname}", nickname)
+        html = html.replace("{name}", name)
+        html = html.replace("{title1}", title1)
+        html = html.replace("{description1}", description1)
         poster = f"{filename}_{counter:05}_Poster.png"
-        print(f'生成图片名称:{poster}')
+        print(f'[Mexx]生成海报名称:{poster}')
         hti.screenshot(html_str=html, css_str=css, save_as=poster, size=(425, 585))
         shutil.move(poster, full_output_folder)
-        print(f'移动图片到output目录:{full_output_folder}')
+        print(f'[Mexx]移动海报到output目录:{full_output_folder}')
         results.append({
             "filename": poster,
             "subfolder": subfolder,
