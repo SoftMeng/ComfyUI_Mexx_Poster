@@ -109,6 +109,7 @@ class ComfyUI_Mexx_Poster:
         descriptions = ['員工技，作為一名優秀的員工，当老闆給妳灌了一口雞湯，妳的血量-1。',
                         '主公技，作為一名優秀的老闆，当給員工灌了一口雞湯时，妳的金钱+2。']
         description1 = random.choice(descriptions)
+        print(f'需要载入图片地址:{os_path_join_file}')
         html = html_template.format(os_path_join_file=os_path_join_file,
                                     clan=clan,
                                     nickname=nickname,
@@ -117,9 +118,10 @@ class ComfyUI_Mexx_Poster:
                                     description1=description1
                                     )
         poster = f"{filename}_{counter:05}_Poster.png"
-        print(f'poster:{poster}')
+        print(f'生成图片名称:{poster}')
         hti.screenshot(html_str=html, css_str=css, save_as=poster, size=(425, 585))
         shutil.move(poster, full_output_folder)
+        print(f'移动图片到output目录:{full_output_folder}')
         results.append({
             "filename": poster,
             "subfolder": subfolder,
