@@ -20,7 +20,7 @@ class ComfyUI_Mexx_Poster:
 
     @classmethod
     def INPUT_TYPES(s):
-        styles = ["card"]
+        styles = ["card","card_big"]
         return {
             "required":
                 {"images": ("IMAGE",),
@@ -38,7 +38,7 @@ class ComfyUI_Mexx_Poster:
 
     OUTPUT_NODE = True
 
-    CATEGORY = "ComfyUI_Mexx_Poster"
+    CATEGORY = "ComfyUI_Mexx"
 
     def poster(self,
                images,
@@ -119,7 +119,12 @@ class ComfyUI_Mexx_Poster:
         html = html.replace("{description1}", description1)
         poster = f"{filename}_{counter:05}_Poster.png"
         print(f'[Mexx]生成海报名称:{poster}')
-        hti.screenshot(html_str=html, css_str=css, save_as=poster, size=(425, 585))
+        size = (768, 1040)
+        if style == 'card':
+            size = (425, 585)
+        if style == 'card_big':
+            size = (768, 1040)
+        hti.screenshot(html_str=html, css_str=css, save_as=poster, size=size)
         shutil.move(poster, full_output_folder)
         print(f'[Mexx]移动海报到output目录:{full_output_folder}')
         results.append({
