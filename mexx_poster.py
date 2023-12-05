@@ -100,7 +100,7 @@ class ComfyUI_Mexx_Poster:
         clans = ['机娘', '女妖', '神秘', '巫师', '骑士', '战士', '兽族', '帝国',
                  '联盟', '部落', '五行', '高塔', '星灵']
         clan = random.choice(clans)
-        nicknames = ['機械女', '弓腰姬', '使者', '万法', '女帝', '垣法', '行走', '逍遥', ]
+        nicknames = ['機械女', '弓腰女', '使者', '万法', '女帝', '垣法', '行走', '逍遥', ]
         nickname = random.choice(nicknames)
         names = ['富江', '春春', '富春', '希仔', '幺幺', '湾仔', '花花', '襄垣']
         name = random.choice(names)
