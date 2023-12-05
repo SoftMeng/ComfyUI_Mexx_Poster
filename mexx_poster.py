@@ -82,7 +82,7 @@ class ComfyUI_Mexx_Poster:
         current_directory = os.path.dirname(os.path.realpath(__file__))
         print(f'current_directory:{current_directory}')
 
-        css_file = open(f"{current_directory}/{style}/poster.css")
+        css_file = open(f"{current_directory}/{style}/poster.css", encoding='UTF-8')
         css_template = css_file.read()
         colors = ['#0094DF', '#FF6B20', '#D53B2A', '#FF6B20', '#8E1580', '#76368C', '#1DEAFF', '#FFA500',
                   '#960309', '#086AAA', '#22625E', '#F9A1D0', '#273268', '#547443']
@@ -95,7 +95,7 @@ class ComfyUI_Mexx_Poster:
         css = css.replace("{color2}", color2)
         css = css.replace("{color3}", color3)
         css = css.replace("{color4}", color4)
-        html_file = open(f"{current_directory}/{style}/poster.html")
+        html_file = open(f"{current_directory}/{style}/poster.html", encoding='UTF-8')
         html_template = html_file.read()
         clans = ['机娘', '女妖', '神秘', '巫师', '骑士', '战士', '兽族', '帝国',
                  '联盟', '部落', '五行', '高塔', '星灵']
