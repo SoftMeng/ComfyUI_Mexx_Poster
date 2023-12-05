@@ -10,6 +10,10 @@
 
 - 视频DEMO文件：[海报完事.mp4](image%2F%E6%B5%B7%E6%8A%A5%E5%AE%8C%E4%BA%8B.mp4)
 - ComfyUI Workflow DEMO文件：[workflow-lcm-poster.json](workflow-lcm-poster.json)
+- ComfyUI Workflow DEMO文件中使用的风格插件是：https://github.com/SoftMeng/ComfyUI_Mexx_Styler
+- ComfyUI Workflow DEMO文件中使用LCM大模型是：https://civitai.com/models/217692/mexxldimsdxllcm2
+
+如不使用LCM大模型，那么需要调整采样器和采样器的执行步数。
 
 ## 生成的效果图
 
