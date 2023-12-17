@@ -111,7 +111,7 @@ class ComfyUI_Mexx_Poster:
         description1 = random.choice(descriptions)
         print(f'[Mexx]需要载入图片地址:{os_path_join_file}')
 
-        html = html_template.replace("{os_path_join_file}", os_path_join_file)
+        html = html_template.replace("{os_path_join_file}", os_path_join_file.replace("\\", "/"))
         html = html.replace("{clan}", clan)
         html = html.replace("{nickname}", nickname)
         html = html.replace("{name}", name)
